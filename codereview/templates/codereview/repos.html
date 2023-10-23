@@ -1,0 +1,34 @@
+{% extends "codereview/base_generic.html" %}
+
+{% block content %}
+<div class="table-responsive"> <!-- Ensure this div is present for table responsiveness -->
+    <table class="table table-striped table-sm equal-column-table"> <!-- Standard table classes for consistency -->
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Repository Name</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if repositories %}
+                {% for repo in repositories %}
+                    <tr>
+                        <td class="narrow-column">{{ forloop.counter }}</td>
+                        <td>{{ repo.name }}</td>
+                        <td>{{ repo.private|yesno:"Private,Public" }}</td>
+                        <td>
+                            <button onclick="scanRepository('{{ repo.full_name }}')" class="btn btn-primary">Scan</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4">No repositories available.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div> <!-- Closing div for table responsiveness -->
+{% endblock %}

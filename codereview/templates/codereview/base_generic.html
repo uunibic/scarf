@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+    <title>ASCART</title>
+    <style>
+        /* Existing style */
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        #sidebar {
+            min-height: 100vh;
+        }
+
+        #sidebar .nav-link {
+            margin: 10px 15px;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        #sidebar .nav-link:hover {
+            background-color: #008cba;
+            color: white;
+        }
+
+        /* Style for the black navbar */
+        .navbar-custom {
+            background-color: #000;
+            /* This sets the navbar color to black */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: #ffffff;
+            /* This sets the text color */
+        }
+
+        .table td,
+        .table th {
+            vertical-align: middle;
+            /* This centers the content vertically in the table cells */
+        }
+
+        .equal-column-table {
+            table-layout: fixed;
+            /* This line keeps your column widths the same */
+            width: 100%;
+            /* This line makes sure your table uses all available space */
+        }
+
+        .equal-column-table th,
+        .equal-column-table td {
+            width: 33.33%;
+            /* This divides the width equally among three columns. Adjust if there are a different number of columns. */
+            text-align: center;
+            /* Optional: centers the content */
+            overflow: hidden;
+            /* Ensures content outside the cell width isn't shown. It's useful if there's too much content in one cell. */
+            text-overflow: ellipsis;
+            /* Optional: if the content overflows, it shows '...' */
+            white-space: nowrap;
+            /* Ensures content stays in one line */
+        }
+
+        .icon-spacing {
+            margin-right: 5px;
+            /* Or whatever space you prefer */
+        }
+
+        .bold-number {
+            font-weight: bold;
+        }
+
+        .narrow-column {
+            width: 1%;  /* minimal width, making it as narrow as possible */
+            white-space: nowrap;  /* prevents the content from wrapping */
+            font-weight: bold;  /* making the text within bold as per requirement */
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar section -->
+    <nav class="navbar navbar-custom navbar-expand-lg"> <!-- Here we use the custom class -->
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+                aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-qr-code-scan icon-spacing"></i>
+                ASCART
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'codereview:fetch-repos' %}">  <!-- Update with your actual view name -->
+                                <span data-feather="home"></span>
+                                Repositories
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'codereview:show-reports' %}">  <!-- Update with your actual view name -->
+                                <span data-feather="file"></span>
+                                Reports
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+
+    <!-- Inside base_generic.html, add this script at the bottom of the file, just before the closing </body> tag -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Only add if jQuery is not included yet -->
+    <script>
+        function scanRepository(repoFullName) {
+            // Get CSRF token from meta tag
+            var csrfToken = $("meta[name='csrf-token']").attr("content");
+
+            $.ajax({
+                headers: { "X-CSRFToken": csrfToken },
+                url: '/codereview/scan_repository/',  // Adjusted path
+                method: 'POST',
+                data: {
+                    'repo_full_name': repoFullName
+                },
+                success: function (response) {
+                    // Handle success (e.g., notify the user, update UI)
+                    alert("Finished Scan for " + repoFullName);
+                },
+                error: function (error) {
+                    // Handle error
+                    alert("Error starting scan.");
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

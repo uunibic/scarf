@@ -1,0 +1,32 @@
+{% extends "codereview/base_generic.html" %}
+
+{% block content %}
+<div class="table-responsive"> <!-- Added div for table responsiveness -->
+    <table class="table table-striped table-sm equal-column-table"> <!-- Adjusted classes to match the other table -->
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Repository Name</th>
+                <th scope="col">Scanned At</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ report.repository_name }}</td>
+                <td>{{ report.scanned_at }}</td>
+                <td>
+                    <a href="{% url 'codereview:download_scan_report' report.id %}" class="btn btn-primary">Download Report</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No reports available</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> <!-- Closing div for table responsiveness -->
+{% endblock %}
