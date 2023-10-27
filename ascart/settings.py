@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -123,9 +124,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GITHUB_TOKEN = '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'
-GITHUB_ORG_NAME = 'ascart-vuln'
-
-OPENAI_API_KEY = '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'
-
-
+GITHUB_TOKEN = config('GITHUB_TOKEN')
+GITHUB_ORG_NAME = config('GITHUB_ORG_NAME')
+OPENAI_API_KEY = config('OPENAI_API_KEY')
