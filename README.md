@@ -1,3 +1,5 @@
+![SCARF](https://github.com/uunibic/scarf/blob/main/f1baa13d-82ea-4ce4-84c3-0e36b1523333.png)
+
 # SCARF (Source Code Analysis and Review Framework)
 SCARF is an open-source SAST tool that harnesses the power of ChatGPT to automatically spot security vulnerabilities and conveniently export them in a report format.
 
