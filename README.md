@@ -3,7 +3,7 @@
 [![django](https://img.shields.io/badge/django-4.2.1-blue.svg?logo=django&labelColor=grey)](https://www.python.org/downloads/)
 [![platform](https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-green.svg)](https://github.com/uunibic/scarf/)
 
-![SCARF](https://github.com/uunibic/scarf/blob/main/f1baa13d-82ea-4ce4-84c3-0e36b1523333.png)
+![SCARF](https://github.com/uunibic/scarf/blob/main/sample/scarf_logo.png)
 
 # SCARF (Source Code Analysis and Review Framework)
 SCARF is an open-source SAST tool that harnesses the power of ChatGPT to automatically spot security vulnerabilities and conveniently export them in a report format.
@@ -59,9 +59,31 @@ Before using the Tool, make sure you have the following prerequisites installed:
 
 ## Screenshots
 
+#### Repository Dashboard
 
+![Repositories](https://github.com/uunibic/scarf/blob/main/sample/sample1.png)
+
+#### Reports Section
+
+![Reports](https://github.com/uunibic/scarf/blob/main/sample/sample2.png)
+
+#### Sample PDF
+
+[Click Here to View Sample PDF Document](https://github.com/uunibic/scarf/blob/main/sample/Sample_PDF_Report.pdf)
 
 ## Limitations
+
+1. **API Rate Limits**: SCARF relies on the ChatGPT API, which is subject to rate limits and usage restrictions imposed by OpenAI. This means there may be limitations on the number of requests or tokens processed within a given timeframe.
+
+2. **Dependence on External Service**: SCARF's core functionality depends on the availability and reliability of the OpenAI API. Any downtime or changes to the API by OpenAI can impact the tool's performance.
+
+3. **Cost Considerations**: While SCARF is open-source, the use of the OpenAI API for extensive analysis can incur costs, especially for large-scale or frequent scanning of codebases.
+
+4. **False Positives/Negatives**: Like all automated analysis tools, SCARF may produce false positives (identifying vulnerabilities that are not real) or false negatives (missing actual vulnerabilities). Human review and validation of results are still essential.
+
+5. **Limited to Code Analysis**: SCARF primarily focuses on source code analysis for security vulnerabilities. It may not cover all aspects of security testing, such as runtime or environmental factors.
+
+6. **Privacy Considerations**: When using SCARF with code repositories, be mindful of potential privacy and security implications, especially when dealing with sensitive code or data.
 
 ## Contributing
 
