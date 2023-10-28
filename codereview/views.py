@@ -97,7 +97,7 @@ def scan_repository(request):
                 
                 Make sure to perform the below mentioned 3 modifications when creating the JSON response:
 
-                1. Change all double quotes (") in the Vulnerable code snippets to single quotes (').
+                1. Change/Escape all double quotes (") in the "Vulnerable code snippets" to single quotes (').
                 2. Don't leave empty lines between pieces of JSON information.
                 3. Do not enclose the JSON bodies within square brackets ([]).
 
