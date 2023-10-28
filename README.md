@@ -59,6 +59,24 @@ Before using the Tool, make sure you have the following prerequisites installed:
    ```bash
    python3 manage.py runserver
 
+## Installation Using Docker
+
+If you don't have Docker installed on your system, you can follow up with the [official Docker installation guide.](https://docs.docker.com/get-docker/)
+
+1) Start by cloning the repository:
+```
+$ git clone https://github.com/uunibic/scarf.git
+```
+2) Build the Docker image:
+```
+$ docker build -t scarf --no-cache .
+```
+3) Build and run Docker container:
+```
+$ docker run --name scarf -d -p 8000:8000 scarf
+```
+and now your app is ready to launch at http://127.0.0.1:8000
+
 ## Screenshots
 
 #### Repository Dashboard
@@ -86,6 +104,12 @@ Before using the Tool, make sure you have the following prerequisites installed:
 5. **Limited to Code Analysis**: SCARF primarily focuses on source code analysis for security vulnerabilities. It may not cover all aspects of security testing, such as runtime or environmental factors.
 
 6. **Privacy Considerations**: When using SCARF with code repositories, be mindful of potential privacy and security implications, especially when dealing with sensitive code or data.
+
+## Features to be added
+
+* Integration with Jenkins
+* PDF Report Enhancement
+* Implementing Authentication
 
 ## Contributing
 
