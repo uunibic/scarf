@@ -12,7 +12,7 @@ SCARF is an open-source SAST tool that harnesses the power of ChatGPT to automat
 
 SCARF is a utility that enables developers and security professionals to analyze source code for security vulnerabilities. This tool leverages the OpenAI GPT-3.5 Turbo model to provide detailed security analysis reports for your codebase.
 
-Note: This project is not officially affiliated with my employer, and neither the employer nor the project maintainers are responsible for any consequences resulting from its usage. Use responsibly.
+Note: This is a learning project and does not represent my job responsibilities.
 
 ## Features
 
