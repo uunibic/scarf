@@ -3,7 +3,8 @@
 [![django](https://img.shields.io/badge/django-4.2.1-blue.svg?logo=django&labelColor=grey)](https://www.python.org/downloads/)
 [![platform](https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-green.svg)](https://github.com/uunibic/scarf/)
 
-![SCARF](https://github.com/uunibic/scarf/blob/main/sample/scarf_logo.png)
+![scarf_logo](https://github.com/uunibic/scarf/assets/64989501/db4d9f1c-b77c-41df-be22-cf262256f1df)
+
 
 # SCARF (Source Code Analysis and Review Framework)
 SCARF is an open-source SAST tool that harnesses the power of ChatGPT to automatically spot security vulnerabilities and conveniently export them in a report format.
@@ -81,15 +82,15 @@ and now your app is ready to launch at http://127.0.0.1:8000
 
 #### Repository Dashboard
 
-![Repositories](https://github.com/uunibic/scarf/blob/main/sample/sample1.png)
+<img width="1440" alt="sample1" src="https://github.com/uunibic/scarf/assets/64989501/14fe003e-6dd2-4cdf-a8b7-0e20bdee7384">
 
 #### Reports Section
 
-![Reports](https://github.com/uunibic/scarf/blob/main/sample/sample2.png)
+<img width="1440" alt="sample2" src="https://github.com/uunibic/scarf/assets/64989501/3af21fe0-9503-41b4-9148-d6025c9ea259">
 
 #### Sample PDF
 
-[Click Here to View Sample PDF Document](https://github.com/uunibic/scarf/blob/main/sample/Sample_PDF_Report.pdf)
+[Click Here to View Sample PDF Report](https://github.com/uunibic/scarf/blob/main/sample/Sample_PDF_Report.pdf)
 
 ## Limitations
 
